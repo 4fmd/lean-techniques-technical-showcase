@@ -21,6 +21,7 @@
 		"no-unused-vars": "warn",
 		"no-empty-pattern": "warn",
 		"no-debugger": "off",
+		"no-mixed-spaces-and-tabs": "off",
 		"react/prop-types": "off",
 		"react-hooks/exhaustive-deps": "warn"
 	}

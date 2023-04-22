@@ -41,7 +41,7 @@ const App = function ({})
 		<div className="App">
 			<AlbumSelectionForm albumId={ albumId } defaultAlbumId={ DEFAULT_ALBUM_ID.current } onAlbumIdSelected={ handleAlbumIdSelected } />
 
-			<Gallery galleryUrl={ GALLERY_URL.current } albumId={ albumId } onThumbnailClick={ handleThumbnailClick } />
+			<Gallery photoAlbumUrl={ GALLERY_URL.current } albumId={ albumId } onThumbnailClick={ handleThumbnailClick } />
 
 			<ImageDialog open={ selectedGalleryImage != null } onClose={ handleImageDialogClose } galleryImage={ selectedGalleryImage } />
 		</div>;
