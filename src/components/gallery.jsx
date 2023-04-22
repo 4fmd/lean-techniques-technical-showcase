@@ -350,7 +350,7 @@ const Gallery = function ({ photoAlbumUrl, albumId, onThumbnailClick })
 	 */
 	useEffect(function ()
 	{
-		let showPhotoAlbum = false;
+		let showAlbum = false;
 
 		//  If there is generated JSX content ...
 		if (Array.isArray(photoAlbumContent))
@@ -359,11 +359,11 @@ const Gallery = function ({ photoAlbumUrl, albumId, onThumbnailClick })
 			if (numberOfImagesLoaded > 0 && numberOfImagesLoaded === photoAlbumContent.length)
 			{
 				//  ... then show the phot album
-				showPhotoAlbum = true;
+				showAlbum = true;
 			}
 		}
 
-		if (showPhotoAlbum)
+		if (showAlbum)
 		{
 			hideSpinner();
 			showPhotoAlbum();
