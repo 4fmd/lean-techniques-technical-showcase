@@ -1,10 +1,10 @@
 import React, { useCallback, useEffect, useState, useRef } from "react";
-import logo from "./logo.svg";
-import "./App.css";
 
 import AlbumSelectionForm from "./components/albumSelectionForm";
 import Gallery from "./components/gallery";
 import ImageDialog from "./components/imageDialog";
+
+import "./App.css";
 
 const App = function ({})
 {

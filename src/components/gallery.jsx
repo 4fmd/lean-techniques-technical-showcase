@@ -1,8 +1,9 @@
 /**
  * File:  gallery.jsx
  *
- * Description:
- *
+ * Description:  React component for displaying a photo album.  Will make an
+ * Ajax call to the specified web service and then render the album as a grid
+ * of thumbnail images.
  */
 import React, { useCallback, useEffect, useState } from "react";
 
@@ -15,6 +16,20 @@ import Thumbnail from "./thumbnail.jsx";
 
 import "../style/gallery.scss";
 
+/**
+ * React component for displaying a photo album with images downloaded from
+ * the specified web service.
+ *
+ * @param {String} photoAlbumUrl URL of the web service from which to
+ * download the photo album images.
+ * @param {Number} albumId Numeric id value of the photo album to download
+ * and display.
+ * @param {Function} onThumbnailClick Event handler callback function for when
+ * a thumbnail image is clicked.  Will receive the `GalleryImage` object
+ * corresponding to the image that was clicked as a parameter.
+ *
+ * @returns {JSX.Element} JSX element to display a photo album
+ */
 const Gallery = function ({ photoAlbumUrl, albumId, onThumbnailClick })
 {
 	//  State Value:  The photo album data downloaded from the web service.
@@ -267,7 +282,7 @@ const Gallery = function ({ photoAlbumUrl, albumId, onThumbnailClick })
 		}
 	}, [ albumId, photoAlbumUrl, createPhotoAlbumData ]);
 
-	/**nessicary
+	/**
 	 * useEffect function to reset all the state values to their defaults.
 	 * Should the user perform an action to interrupt the load and generate
 	 * process, and then return the process could start again using intermediate
@@ -291,7 +306,7 @@ const Gallery = function ({ photoAlbumUrl, albumId, onThumbnailClick })
 	useEffect(function ()
 	{
 		//  Create an abort controller for the Axios Ajax call and a clean up
-		//  function for the useEffect function.nessicary
+		//  function for the useEffect function.
 		const controller = new AbortController();
 		const cleanup = function ()
 		{
