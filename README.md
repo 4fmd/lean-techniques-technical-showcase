@@ -45,7 +45,7 @@ Development for this project can be done using either `npm` or `yarn`.
 
 Both `npm` and `yarn` were used during the development of this project.  Continued development can use either or decide to use only one.  Since both package managers were used `package-lock.json` and `yarn.lock` files are included.
 
-When switching between package managers it is recommended to clear their cache, remove the lock files, and perform an install.
+When switching between package managers it is recommended to remove the lock files, clear their cache, and perform an install.
 
 **Remember to stop the React development server first!**
 
@@ -75,9 +75,6 @@ To develop using the `npm` package manager execute the following commands from a
 
 ```shell
 $ npm install
-```
-
-```shell
 $ npm start
 ```
 #### `yarn`
@@ -86,9 +83,6 @@ To develop using the `npm` package manager execute the following commands from a
 
 ```shell
 $ yarn install
-```
-
-```shell
 $ yarn start
 ```
 
