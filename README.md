@@ -1,15 +1,14 @@
-
 - [Lean Techniques Photo Album Technical Showcase](#lean-techniques-photo-album-technical-showcase)
 	- [Overview](#overview)
 	- [Dependencies](#dependencies)
 	- [Development Environment](#development-environment)
-		- [Building for Development](#building-for-development)
 		- [`npm` vs `yarn`](#npm-vs-yarn)
-			- [`npm`](#npm)
-			- [`yarn`](#yarn)
-		- [Building for Production](#building-for-production)
-			- [`npm`](#npm-1)
-			- [`yarn`](#yarn-1)
+		- [`npm`](#npm)
+		- [`yarn`](#yarn)
+	- [Building for Production](#building-for-production)
+		- [`npm`](#npm-1)
+		- [`yarn`](#yarn-1)
+
 
 ## Lean Techniques Photo Album Technical Showcase
 
@@ -17,7 +16,7 @@ This project provides a solution to a technical showcase problem posed by [Lean 
 
 ### Overview
 
-This project provides a solution to the showcase problem using [React](https://react.dev/).
+The solution provided by this project uses [React](https://react.dev/).
 
 ### Dependencies
 
@@ -40,15 +39,11 @@ This project was written using [Visual Studio Code](https://code.visualstudio.co
 
 Development on this project has **NOT** been tested on Windows or macOS.
 
-#### Building for Development
-
 Development for this project can be done using either `npm` or `yarn`.
 
 #### `npm` vs `yarn`
 
-Both `npm` and `yarn` were used during the development of this project.  Continued development can use either or decide to use only one.
-
-Since both package managers were used `package-lock.json` and `yarn.lock` files are included.
+Both `npm` and `yarn` were used during the development of this project.  Continued development can use either or decide to use only one.  Since both package managers were used `package-lock.json` and `yarn.lock` files are included.
 
 When switching between package managers it is recommended to clear their cache, remove the lock files, and perform an install.
 
@@ -74,9 +69,7 @@ $ yarn cache clean
 $ yarn install
 ```
 
-
-
-##### `npm`
+#### `npm`
 
 To develop using the `npm` package manager execute the following commands from a terminal window in the root directory of the project.
 
@@ -87,7 +80,7 @@ $ npm install
 ```shell
 $ npm start
 ```
-##### `yarn`
+#### `yarn`
 
 To develop using the `npm` package manager execute the following commands from a terminal window in the root directory of the project.
 
@@ -101,24 +94,52 @@ $ yarn start
 
 Once the project has been built and is ready for development, the default system browser will open to `http://localhost:3000` and the project will be opened.
 
-#### Building for Production
+### Building for Production
 
 Building a production version of this project can be done using either `npm` or `yarn`.
 
 **Before executing the build commands stop the React development server!**
 
-##### `npm`
+#### `npm`
 
 To build using the `npm` package manager execute the following commands from a terminal window in the root directory of the project.
 
 ```shell
-$ npm build
+$ rm -rf ./build/
+$ rm -f package-lock.json yarn.lock
+$ npm cache clean --force
+$ npm install
+$ npm run build
 ```
 
-##### `yarn`
+Once the build process finishes, the output files will be in a `build` directory at the root of the project.  The files can then be copied to a web server for hosting.
+
+To use `node` to serve the files issue the following commands (as root):
+
+```shell
+$ cd build
+$ npm install -g serve
+$ serve
+```
+
+#### `yarn`
 
 To build using the `yarn` package manager execute the following commands from a terminal window in the root directory of the project.
 
 ```shell
+$ rm -rf ./build/
+$ rm -f package-lock.json yarn.lock
+$ yarn cache clean
+$ yarn install
 $ yarn build
+```
+
+Once the build process finishes, the output files will be in a `build` directory at the root of the project.  The files can then be copied to a web server for hosting.
+
+To use `node` to serve the files issue the following commands (as root):
+
+```shell
+$ cd build
+$ yarn global add serve
+$ serve
 ```
