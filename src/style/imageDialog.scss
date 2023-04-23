@@ -1,0 +1,38 @@
+/**
+ * File:  imageDialog.scss
+ *
+ * Description:  Styling for the Material UI dialog that opens the full sized
+ * photo album image.
+ */
+
+.image-dialog
+{
+	//  Material UI will set a max width that causes alignment issues with
+	//  the image.  Clear those properties so the browser can calculate them
+	.css-1t1j96h-MuiPaper-root-MuiDialog-paper
+	{
+		max-width: unset;
+		max-height: unset;
+	}
+
+	.image-dialog-content
+	{
+		width: fit-content;
+
+		//  Flex the image such that it is centered in the dialog
+		.image-container
+		{
+			display: flex;
+			flex-direction: row;
+			flex-wrap: nowrap;
+			justify-content: center;
+			align-items: center;
+			align-content: center;
+
+			img
+			{
+				margin: 2px;
+			}
+		}
+	}
+}

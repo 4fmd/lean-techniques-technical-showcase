@@ -1,0 +1,16 @@
+/**
+ * File:  index.css
+ *
+ * Description:  Base styling on index.html
+ */
+
+body
+{
+	/*
+	 * Get rid of the extra spacing around the body tag.  Let child elements
+	 * control that and just use the body tag as a container.
+	 */
+	margin: 0px;
+	padding: 0px;
+	font-family: sans-serif;
+}
