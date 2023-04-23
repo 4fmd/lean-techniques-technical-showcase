@@ -9,6 +9,8 @@ import React from "react";
 import Dialog from "@mui/material/Dialog";
 import DialogTitle from "@mui/material/DialogTitle";
 
+import "../style/imageDialog.scss";
+
 /**
  * React component containing a Material UI dialog which contains an image
  * from the photo album.
@@ -27,11 +29,13 @@ import DialogTitle from "@mui/material/DialogTitle";
 const ImageDialog = function ({ open, onClose, galleryImage })
 {
 	let content = (typeof galleryImage !== "undefined" && galleryImage !== null) ?
-		<Dialog open={ open } onClose={ onClose }>
-			<div>
-				<DialogTitle>{ galleryImage.title }</DialogTitle>
+		<Dialog open={ open } onClose={ onClose } className={ "image-dialog" }>
+			<div className={ "image-dialog-content" }>
+				<DialogTitle>{ galleryImage.id} - { galleryImage.title }</DialogTitle>
 
-				<img id={ "full" + galleryImage.id } className={ null } src={ galleryImage.url } alt={ galleryImage.title } title={ galleryImage.title } width={ 600 } height={ 600 } />
+				<div className={ "image-container" }>
+					<img id={ "full" + galleryImage.id } className={ null } src={ galleryImage.url } alt={ galleryImage.title } title={ galleryImage.title } width={ 600 } height={ 600 } />
+				</div>
 			</div>
 		</Dialog>
 		: null;

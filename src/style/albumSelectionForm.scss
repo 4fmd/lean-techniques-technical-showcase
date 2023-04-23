@@ -1,3 +1,9 @@
+/**
+ * File:  albumSelectionForm.scss
+ *
+ * Description:  Styling for the form that changes the photo album.
+ */
+
 div.input
 {
 	white-space: nowrap;
@@ -8,12 +14,16 @@ div.input
 	border-bottom-left-radius: 5px;
 	border-bottom-right-radius: 5px;
 
+	//  Put the form at the top right of the screen and keep it there
 	position: fixed;
 	top: 0px;
 	right: 2%;
 
 	z-index: 100;
 
+	//  Shrink the form to fit the content and add some buffer size around
+	//  the elements.  The form is small, so a little spacing makes a world
+	//  of difference.
 	form.album-selection-form
 	{
 		width: fit-content;
